@@ -1,32 +1,25 @@
-#include <iostream>
-using namespace std;
+10 → 20 → 30 → NULL
 
-struct Node {
-    int data;
-    Node* next;
-};
+new_node->next = ptr->next;
 
-int main() {
-    Node node1;
-    Node node2;
-    Node newNode;
+ptr->next = new_node; my new-node is 25
 
-    node1.data = 10;
-    node2.data = 20;
+10 → 20 → 30
+     ↑
+    ptr
 
-    node1.next = &node2;
-    node2.next = NULL;
+new_node = 25
 
-    newNode.data = 15;
-    newNode.next = &node2;
-    node1.next = &newNode;
+ptr 20 par hai.
 
-    Node* head = &node1;
-    while (head != NULL){
-        cout << head->data << "->";
-        head = head->next;
-    }
-    cout << "NULL" << endl;
+ptr->next 30 ko point kar raha hai.
 
-    return 0;
-}
+ab
+10 → 20 → 30
+     ↑
+    ptr
+
+25 → 30
+
+
+10 → 20 → 25 → 30 → NULL
